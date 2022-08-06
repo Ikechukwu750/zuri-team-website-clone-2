@@ -5,7 +5,7 @@
   --light-gray: #d4d0d0;
   --talent-light-red: #fdf3f2;
   --tomato-color: #e7332b;
-  --soft-black: #514949;
+  --soft-black: #787878;
   --almost-black: #161617;
 }
 
@@ -100,9 +100,20 @@ a.text-white,
 }
 
 .talent-btn {
+  position: relative;
   border-bottom-right-radius: 0.7rem;
   font-size: 1rem;
   padding: 0.6rem 2.7rem;
+}
+
+.talent-section-1 .talent-btn,
+.talent-section-4 .talent-btn {
+  box-shadow: 0.1rem 0 0.5rem #b9b9b9;
+}
+
+.talent-section-1 .talent-btn:hover,
+.talent-section-4 .talent-btn:hover {
+  box-shadow: 0.1rem 0 1rem #a5a4a4;
 }
 
 .bg-semi-black {
@@ -545,14 +556,23 @@ a.text-white,
   justify-content: center;
 }
 
-.training-footer-container .logo-social {
+.talent-footer .talent-footer-container a.talent-footer-link {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.training-footer-container .logo-social,
+.talent-footer-container .logo-social {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 1rem auto;
 }
 
-.training-footer-container .training-footer-bottom {
+.training-footer-container .training-footer-bottom,
+.talent-footer-container .talent-footer-bottom {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -566,27 +586,33 @@ a.text-white,
 
 /* Talent Styles */
 
-.talent {
-  padding: 1rem 3rem !important;
-}
-
 .talent .talent-header {
   width: 100%;
+  background-color: #fff;
   position: fixed;
   z-index: 6;
-  background-color: var(--almost-white);
-  margin-top: -1rem;
-  padding: 1.2rem 1rem;
 }
 
-.talent-header-img {
+.talent-header-wrapper {
+  padding: 1.2rem 3rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+}
+
+.talent-h1-img {
   position: absolute;
   right: 6rem;
   bottom: 0.6rem;
+  width: 5rem;
 }
 
 .talent-section-1 {
-  margin-top: 5rem;
+  padding-top: 6rem;
+  padding: 2rem;
+  width: 100% !important;
 }
 
 .talent-section-1 p {
@@ -607,26 +633,164 @@ a.text-white,
 
 .talent-section-1-flex .talent-section-1-flex-item img {
   max-width: 450px;
+  width: 100%;
   height: auto;
 }
 
+.talent-section-2 {
+  background-color: var(--talent-light-red);
+  padding: 5rem 0;
+}
 
+.talent-section-2 .talent-section-2-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-grow: 1;
+}
 
+.talent-section-2-container .talent-section-2-item {
+  position: relative;
+  width: 100%;
+}
 
+.talent-section-2 .countries-impacted {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
 
+.countries-impacted .country {
+  border-radius: 0.5rem;
+  background-color: #fff;
+  max-width: 400px;
+  width: 4.4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem;
+}
 
+.countries-impacted .country img {
+  width: 100%;
+  height: auto;
+}
 
+.talent-section-2-item.img-section-2 {
+  width: 100%;
+  height: auto;
+}
 
+.talent-section-2-item.img-section-2 img {
+  max-width: 100%;
+  height: auto;
+}
 
+.talent-section-3 {
+  padding: 4rem 5%;
+}
 
+.talent-work h1,
+.talent-skills h1 {
+  margin: 2rem 1rem;
+}
 
+.talent-section-3 .skills,
+.talent-skills .works {
+  font-size: 1.08rem;
+  display: flex;
+  justify-content: stretch;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
+}
 
+.skills .skill,
+.works .brand {
+  margin-bottom: 1.2rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  flex: 0 1 5rem;
+  padding: 0.5rem 2rem;
+  box-shadow: 0.4rem 0 1.3rem 0.4rem #f0f0f0;
+  transition: 0.3s;
+}
 
+.skills .skill:hover,
+.works .brand:hover {
+  transition: 0.3s;
+  transform: translateY(-1rem);
+}
 
+.skills .skill:not(:last-child),
+.works .brand:not(:last-child) {
+  margin-right: 1rem;
+}
 
+.skills .line {
+  width: 12%;
+  right: -2rem;
+  top: -3rem;
+}
 
+.talent-section-4 {
+  background-color: var(--talent-light-red);
+  /* padding: 4rem 5%;
+  margin: 3rem 0; */
+}
 
+.talent-section-4-container {
+  position: relative;
+  text-align: center;
+}
 
+.talents-hire {
+  position: relative;
+  max-width: 100%;
+  margin: 3rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.talent-hire-item {
+  max-width: 100%;
+  background-color: #fff;
+  color: var(--soft-black);
+  flex: 1 1 17rem;
+  border-bottom-right-radius: 1rem;
+  padding: 2rem;
+  font-weight: 500;
+}
+
+.talent-hire-item:hover {
+  background-color: var(--almost-black);
+  color: var(--light-gray);
+}
+
+.talent-hire-item p {
+  font-size: 1.1rem;
+  margin: 1rem;
+}
+
+.talent-footer {
+  background-color: var(--almost-black);
+  color: var(--almost-white);
+}
+
+.talent-footer-line {
+  display: none;
+}
+
+.talent-footer-container .left-top {
+  text-align: center !important;
+  justify-self: center !important;
+}
 
 @media only screen and (min-width: 1200px) {
   .mentorship .section-5-group {
@@ -649,16 +813,17 @@ a.text-white,
   .talent-section-1-flex {
     flex-direction: column !important;
     gap: 2rem;
+    justify-content: center;
     align-items: center;
     text-align: center;
+  }
+
+  .skills .line {
+    display: none;
   }
 }
 
 @media only screen and (max-width: 1000px) {
-  .training-nav {
-    display: none;
-  }
-
   .training-section-3 .star {
     display: none !important;
   }
@@ -671,13 +836,26 @@ a.text-white,
   .section-6 {
     padding: 2rem 1rem !important;
   }
+
+  .talent-section-2 .talent-section-2-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .talent-section-2 .countries-impacted {
+    gap: 2%;
+    justify-content: center;
+  }
 }
 
 @media only screen and (max-width: 900px) {
-  .talent {
-    padding: 1rem 3rem;
+  .training-nav {
+    display: none;
   }
-  
 }
 
 @media only screen and (max-width: 768px) {
@@ -685,7 +863,8 @@ a.text-white,
     padding: 1rem !important;
   }
 
-  .training-footer-container .logo-social {
+  .training-footer-container .logo-social,
+  .talent-footer-container .logo-social {
     text-align: center !important;
     flex-direction: column;
     gap: 1rem;
@@ -704,12 +883,14 @@ a.text-white,
     max-width: 65%;
   }
 
-  .training-footer-container .training-footer-bottom {
+  .training-footer-container .training-footer-bottom,
+  .talent-footer-container .talent-footer-bottom {
     flex-direction: column;
     gap: 1rem;
   }
 
-  .training-footer-container .training-privacy-policy {
+  .training-footer-container .training-privacy-policy,
+  .talent-footer-container .talent-privacy-policy {
     flex-direction: column;
     gap: 1rem;
     justify-content: center;
@@ -720,5 +901,95 @@ a.text-white,
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+
+  .talent-header-wrapper {
+    padding: 1.2rem;
+  }
+
+  .talent-footer-line {
+    display: block;
+  }
+
+  .talent-section-4 {
+    padding: 2rem 3%;
+    margin: 2rem 0 !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .countries-impacted .country {
+    border-radius: 0.4rem;
+    background-color: #fff;
+    max-width: 300px;
+    width: 16%;
+    height: 3.2rem;
+    padding: 2%;
+  }
+
+  .talent-section-2 .countries-impacted {
+    gap: 2%;
+    justify-content: center;
+  }
+
+  .talent-btn {
+    position: relative;
+    border-bottom-right-radius: 0.6rem;
+    font-size: 0.9rem;
+    padding: 0.3rem 1.5rem;
+  }
+
+  .talent-section-1 {
+    padding: 0.8rem;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .talent-section-1-flex {
+    gap: 0;
+  }
+
+  .talent-section-1-flex .talent-section-1-flex-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .talent-section-1,
+  .talent-section-2 {
+    text-align: center;
+  }
+
+  .talent-section-2-item.img-section-2 img {
+    max-width: 90%;
+    height: auto;
+  }
+
+  .skills,
+  .works {
+    justify-content: space-between;
+  }
+
+  .skills .skill,
+  .works .brand {
+    padding: 0.4rem 1.4rem;
+    flex: 0 1 4rem;
+    align-items: stretch;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .talent-btn {
+    position: relative;
+    border-bottom-right-radius: 0.6rem;
+    font-size: 0.9rem;
+    padding: 0.2rem 1.2rem;
+    margin: 0.2rem;
+  }
+
+  .skills .skill,
+  .works .brand {
+    padding: 0.3rem 1rem;
+    flex: 1 1 3rem;
   }
 }
